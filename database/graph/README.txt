@@ -1,6 +1,6 @@
-ËµÃ÷£º
-1.create_csv.pyÎÄ¼şÓÃÀ´Éú³ÉcsvÎÄ¼şÓÃÓÚµ¼ÈëÍ¼Êı¾İ¿â£¨ÒÑÉú³É£©
-2.½«Éú³ÉµÄËùÓĞÎÄ¼ş·ÅÔÚneo4jµÄimportÄ¿Â¼ÏÂ
-3.ÔÚneo4jµÄbinÄ¿Â¼ÏÂÖ´ĞĞÒÔÏÂÃüÁî£º(graph.dbÎªÊı¾İ¿âÃû³Æ)
+è¯´æ˜ï¼š
+1.create_csv.pyæ–‡ä»¶ç”¨æ¥ç”Ÿæˆcsvæ–‡ä»¶ç”¨äºå¯¼å…¥å›¾æ•°æ®åº“ï¼ˆå·²ç”Ÿæˆï¼‰
+2.å°†ç”Ÿæˆçš„æ‰€æœ‰æ–‡ä»¶æ”¾åœ¨neo4jçš„importç›®å½•ä¸‹
+3.åœ¨neo4jçš„binç›®å½•ä¸‹æ‰§è¡Œä»¥ä¸‹å‘½ä»¤ï¼š(graph.dbä¸ºæ•°æ®åº“åç§°)
 neo4j-admin  import --database=graph.db --nodes D:\neo4j-community-3.5.3\import\company_name.csv --nodes D:\neo4j-community-3.5.3\import\bank.csv --nodes D:\neo4j-community-3.5.3\import\total_credit.csv --nodes D:\neo4j-community-3.5.3\import\bond_name.csv --nodes D:\neo4j-community-3.5.3\import\company_executive.csv --nodes D:\neo4j-community-3.5.3\import\shares.csv  --relationships D:\neo4j-community-3.5.3\import\bank_rel.csv --relationships D:\neo4j-community-3.5.3\import\com_bond_rel.csv --relationships D:\neo4j-community-3.5.3\import\s_lu_name_rel.csv --relationships D:\neo4j-community-3.5.3\import\shares_rel.csv --relationships D:\neo4j-community-3.5.3\import\lead_underwriter_rel.csv --relationships D:\neo4j-community-3.5.3\import\recommender_rel.csv  --relationships D:\neo4j-community-3.5.3\import\institution_rel.csv --relationships D:\neo4j-community-3.5.3\import\total_credit_rel.csv --relationships D:\neo4j-community-3.5.3\import\com_exec_rel.csv  --relationships D:\neo4j-community-3.5.3\import\com_rate_rel.csv
-4.Ö´ĞĞ´ËÃüÁîÖ®Ç°ÒªÔİÍ£Êı¾İ¿âµÄ·şÎñ,Ö´ĞĞÍê³ÉºóÔÙÆô¶¯·şÎñÆ÷¼´¿ÉÕı³£Ê¹ÓÃ
+4.æ‰§è¡Œæ­¤å‘½ä»¤ä¹‹å‰è¦æš‚åœæ•°æ®åº“çš„æœåŠ¡,æ‰§è¡Œå®Œæˆåå†å¯åŠ¨æœåŠ¡å™¨å³å¯æ­£å¸¸ä½¿ç”¨
