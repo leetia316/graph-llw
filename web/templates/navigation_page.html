@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<head>
+  <title>导航页</title>
+  <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+  <script>
+  $(document).ready(function(){
+    $("button#search_bus").click(function () {
+      var obj = $('#test_bus').val();
+      var searchUrl = encodeURI("./business.html?name="+obj+"&id=1");
+      window.location.href = searchUrl;
+      console.log(obj);
+    });    
+  });    
+
+  $(document).ready(function(){
+    $("button#search_con").click(function () {
+      var obj1 = $('#test_con1').val();
+	  var obj2 = $('#test_con2').val();
+      var searchUrl = encodeURI("./business.html?name1="+obj1+"&name2="+obj2+"&id=2");
+      window.location.href = searchUrl;
+      console.log(obj2);
+    });    
+  });
+  
+  $(document).ready(function(){
+    $("button#search_fin").click(function () {
+      var obj = $('#test_fin').val();
+      var searchUrl = encodeURI("./business.html?name="+obj+"&id=3");
+      window.location.href = searchUrl;
+    });    
+  });
+  
+  $(document).ready(function(){
+    $("button#search_credit").click(function () {
+      var obj = $('#test_credit').val();
+      var searchUrl = encodeURI("./business.html?name="+obj+"&id=4");
+      window.location.href = searchUrl;
+    });    
+  });
+  
+  $(document).ready(function(){
+    $("button#search_info").click(function () {
+      var obj = $('#test_info').val();
+      var searchUrl = encodeURI("./business.html?name="+obj+"&id=5");
+      window.location.href = searchUrl;
+    });    
+  });
+  
+  $(document).ready(function(){
+    $("button#search_tree1").click(function () {
+      var obj = $('#test_tree1').val();
+      var searchUrl = encodeURI("./tree.html?child_name="+obj);
+      window.location.href = searchUrl;
+    });    
+  });
+  
+  $(document).ready(function(){
+    $("button#search_tree2").click(function () {
+      var obj = $('#test_tree2').val();
+      var searchUrl = encodeURI("./tree.html?father_name="+obj);
+      window.location.href = searchUrl;
+    });    
+  });
+  
+  $(document).ready(function(){
+    $("button#search_manu").click(function () {
+       var obj1 = $('#test_manu1').val();
+	   var obj2 = $('#test_manu2').val(); 
+	   var obj3 = $('#test_per').val(); 
+	   if(obj1 == ""){
+		 alert('请输入母公司名！')
+	   }else if(obj2 == ""){
+	     alert('请输入子公司名！')
+	   }else{
+	   
+		   $.post('/post_insert',
+		   {
+			 parent: obj1,
+			 child: obj2,
+			 percent: obj3
+		   },
+		   function(result) {
+			 alert(result);
+		   }); 
+		}
+    });    
+  }); 
+  
+  </script>
+</head>
+
+<body>
+	<p>查找目标公司的业务</p>
+	<span>请输入公司名：<input type="text" id="test_bus"></span>
+	<button id="search_bus">查询</button>
+	<p style = "margin-top:40px">查找两个公司之间的联系</p>
+	<p>请输入公司名：<input type="text" id="test_con1"></p>
+	<span>请输入公司名：<input type="text" id="test_con2"></span>
+	<button id="search_con">查询</button>
+	<p style = "margin-top:40px">查找目标公司的关联金融机构</p>
+	<span>请输入公司名：<input type="text" id="test_fin"></span>
+	<button id="search_fin">查询</button>
+	<p style = "margin-top:40px">查找目标公司的授信金额及银行</p>
+	<span>请输入公司名：<input type="text" id="test_credit"></span>
+	<button id="search_credit">查询</button>
+	<p style = "margin-top:40px">查找目标公司的关联图谱</p>
+	<span>请输入公司名：<input type="text" id="test_info"></span>
+	<button id="search_info">查询</button>
+	<p style = "margin-top:40px">查找目标公司的股权结构树</p>
+	<span>请输入母公司名：<input type="text" id="test_tree1"></span>
+	<button id="search_tree1">查询</button>
+	<span>请输入子公司名：<input type="text" id="test_tree2"></span>
+	<button id="search_tree2">查询</button>
+	<p>人工输入子母公司：</p>
+	<span>请输入母公司名：<input type="text" id="test_manu1"></span>
+	<span>请输入子公司名：<input type="text" id="test_manu2"></span>
+	<span>请输入投资占比(选填)(示例：20.35%)：<input type="text" id="test_per"></span>
+	<button id="search_manu">确定</button>
+</body>
